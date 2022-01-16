@@ -26,7 +26,7 @@ public class Main {
         logins = scanner.nextLine();
 
         switch (logins) {
-            case "REGISTER" -> {                                  //REGISTER
+            case "REGISTER" -> {                                            //REGISTER
                 System.out.println("Sāksim reģistrāciju.");
                 System.out.println("Ievadi savu vārdu:");
                 nameX = scanner.nextLine();
@@ -34,25 +34,25 @@ public class Main {
                 emailX = scanner.nextLine();
                 System.out.println("Ievadi savu paroli (vismaz 8 simboli):");
                 passX = scanner.nextLine();
-                //nosacījumi, kāpēc nevarētu piereģistrēties
-                if (nameX.equals(nameDb)) {                        //nevar būt jau esošs lietotājs
+                                                                             //nosacījumi, kāpēc nevarētu piereģistrēties
+                if (nameX.equals(nameDb)) {                                  //nevar būt jau esošs lietotājs
                     System.out.println("Lietotājs ar šādu vārdu jau eksistē. Izvēlies citu vārdu.");
                     System.out.println("Pārlādē lapu un sāc no jauna! :D ");
-                } else if (passX.length() < 8) {                     //parolei jābūt vismaz 8 simboliem
+                } else if (passX.length() < 8) {                             //parolei jābūt vismaz 8 simboliem
                     System.out.println("Bija taču teikts, ka parolei vajag vismaz 8 simbolus.");
                     System.out.println("Pārlādē lapu un sāc no jauna! :D ");
-                } else if (emailX.equals(emailDb)) {               //nevar būt viens e-pasts vairākiem lietotājiem
+                } else if (emailX.equals(emailDb)) {                         //nevar būt viens e-pasts vairākiem lietotājiem
                     System.out.println("Opiņā. Kāds cits būs reģistrējies ar Tavu e-pastu.");
                     System.out.println("Pārlādē lapu un sāc no jauna! :D ");
 
-                } else {                                         //ja viss kārtībā ar reģistrāciju
+                } else {                                                     //ja viss kārtībā ar reģistrāciju
                     System.out.println("Apsveicam, " + nameX + "! Esi reģistrēts!");
                     System.out.println("Vai vēlies ieiet savā jaunajā profiLā?");
                     System.out.println("Jā - Y. Nē - N.");
                     yn = scanner.nextLine();
                     switch (yn) {
                         case "N" -> System.out.println("OK. Gaidīsim citreiz! Foršu dienu!");
-                        case "Y" -> {                                //Login ar tikko reģistrētiem datiem
+                        case "Y" -> {                                           //Login ar tikko reģistrētiem datiem
                             System.out.println("Lieliski!");
                             System.out.println("Ievadi savu e-pastu:");
                             email = scanner.nextLine();
@@ -62,7 +62,7 @@ public class Main {
                                 System.out.println("Lietotājs ar šādiem datiem neeksistē.");
                                 System.out.println("Pārlādē lapu un sāc no jauna! :D ");
 
-                            } else {                                     //Lietotāja profils
+                            } else {                                            //Lietotāja profils
                                 System.out.println("Čau, " + nameX + "! Šis ir Tavs profils!");
                                 System.out.println("Vārds: " + nameX);
                                 System.out.println("E-pasts: " + emailX);
@@ -73,7 +73,7 @@ public class Main {
                                         "One full of water in case he gets thirsty and an empty one in case he doesn’t.");
                                 System.out.println();
 
-                                do {                                     //LOGOUT
+                                do {                                                //LOGOUT
                                     System.out.println("Vai vēlies iziet?");
                                     System.out.println("Jā - Y. Nē - N.");
                                     yn = scanner.nextLine();
@@ -84,13 +84,13 @@ public class Main {
                     }
                 }
             }
-            case "LOGIN" -> {                                    //LOGIN
+            case "LOGIN" -> {                                                //LOGIN
                 System.out.println("Ievadi savu e-pastu:");
                 email = scanner.nextLine();
                 System.out.println("Ievadi savu paroli:");
                 pass = scanner.nextLine();
 
-                if (!email.equals(emailDb)) {                  //Login ar jau esošiem datiem
+                if (!email.equals(emailDb)) {                                 //Login ar jau esošiem datiem
                     System.out.println("Nav pareizs e-pasts vai parole");
                     System.out.println("Pārlādē lapu un sāc no jauna! :D ");
                 } else if (!pass.equals(passDb)) {
@@ -107,7 +107,7 @@ public class Main {
                             "One full of water in case he gets thirsty and an empty one in case he doesn’t.");
                     System.out.println();
 
-                    do {                                     //LOGOUT
+                    do {                                                        //LOGOUT
                         System.out.println("Vai vēlies iziet?");
                         System.out.println("Jā - Y. Nē - N.");
                         yn = scanner.nextLine();
@@ -115,7 +115,7 @@ public class Main {
                     System.out.println("OK. Gaidīsim nākošreiz! Foršu dienu!");
                 }
             }
-            default -> {                                                //Nav ne LOGIN, ne REGISTER
+            default -> {                                                      //Nav ne LOGIN, ne REGISTER
                 System.out.println("Kaut kas nav pareizi.");
                 System.out.println("Vai tad tik grūti uzrakstīt vienu no diviem vārdiem?");
                 System.out.println("Pārlādē lapu un mēģini vēlreiz. :D");
